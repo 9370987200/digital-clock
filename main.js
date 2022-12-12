@@ -15,7 +15,7 @@ function time(){
     
 
     if (hrs > 12 ){
-        hrs =  hrs - 12  ;
+        hrs =  hrs - 12;
         AMPM = 'PM';  // 
         document.getElementById('hours').innerText = hrs +   '\n'+ ' hour';
         document.getElementById('AMPM').innerText = AMPM;
@@ -136,99 +136,60 @@ function getTimeDetails(){
         console.log("Yes all the times are equal so displaying the welcome home image  ");
         img = "<img  src='./welcome.png' alt=''></img>"
     }
-
-   else if (arrWakeTime[0] === (hrs+AMPM)){
-            img = "<img  src='assets/Component 30 – 1.svg' alt=''>"
-            document.getElementById('imageTag').innerHTML  = img;
-            document.getElementById('grabSomeBreakfastheading').innerText ="GRAB SOME HEALTHY BREAKFAST    !!!. ";
-            document.getElementById('messageParaAsPerTime').innerText ="GOOD MORNING  !! WAKE UP  !!   .";
-          
-            document.getElementById('imageTag').style.height ='70%'
-            document.getElementById('imageTag').style.width ='70%'
-           
-            
-            console.log("Yes they  is our wake up time  ")
-
-
-   }
-
-   else if (arrLunchTime[0] === (hrs+AMPM)){
-        img = "<img  src='./lunch-img.jpg' alt=''>"
-        document.getElementById('imageTag').innerHTML  = img;
-        document.getElementById('grabSomeBreakfastheading').innerText ="LET'S HAVE SOME LUNCH     !!.  ";
-        document.getElementById('messageParaAsPerTime').innerText ="GOOD AFTERNOON !! TAKE SOME SLEEP   !!!!!.  ";
-        document.getElementById('imageTag').style.height ='100%'
-        document.getElementById('imageTag').style.width ='70%'
-   
-    
-        console.log("Yes they  is our lunch time  ")
-   }
-
-
-   else if (arrNapTime[0] === (hrs+AMPM)){
-    img = "<img  src='evening-img.jpg' alt=''>"
-    document.getElementById('imageTag').innerHTML  = img;
-    document.getElementById('grabSomeBreakfastheading').innerText ="STOP YAWNING, GET SOME TEA.. ITS JUST EVENING  !!!   ";
-    document.getElementById('messageParaAsPerTime').innerText ="GOOD EVENING    !!  .";
-    document.getElementById('imageTag').style.height ='100%'
-    document.getElementById('imageTag').style.width ='70%'
-
-
-    console.log("Yes they  is our evening  time  ")
-    }
-
-
-    else if (arrNightTime[0] === (hrs+AMPM))
+    else if (arrNightTime[0] && arrNapTime[0] && arrLunchTime[0] && arrWakeTime[0]=== (hrs+AMPM))
     {
-        img = "<img  src='./good-night.jpg' alt=''>"
+        img = "<img  src='./goodnight.jpg' alt=''>"
         document.getElementById('imageTag').innerHTML  = img;
         document.getElementById('grabSomeBreakfastheading').innerText
          ="CLOSE YOUR EYES AND GO TO SLEEP !!!!!.";
          document.getElementById('messageParaAsPerTime').innerText="GOOD NIGHT   !!  .. ";
     
-
-        document.getElementById('imageTag').style.height ='100%'
+        
+         document.getElementById('imageTag').style.height ='100%'
         document.getElementById('imageTag').style.width ='70%'
-
-
+        
+        
         console.log("Yes they  is our night time  ")
     }
-
-
-/*
-    else {
-        if ( arrNapTime[0] === (hrs+AMPM)){
-            img = "<img  src='assets/goodNightImage.png' alt=''>"
-            document.getElementById('imageTag').innerHTML  = img;
-           document.getElementById('imageTag').style.height ='70%'
-           document.getElementById('imageTag').style.width ='70%'
-           
-            
-            console.log("Yes they are equal ")
-        }
-    }
-    */
- 
-
- /*
-    var img = " <img  src='assets/goodNightImage.png' alt=''>" 
-    if ( arrNapTime[0] === (hrs+AMPM)){
+    else if (arrNapTime[0] && arrLunchTime[0] && arrWakeTime[0]=== (hrs+AMPM)){
+        img = "<img  src='./naps.jpg' alt=''>"
         document.getElementById('imageTag').innerHTML  = img;
-       document.getElementById('imageTag').style.height ='70%'
-       document.getElementById('imageTag').style.width ='70%'
+        document.getElementById('grabSomeBreakfastheading').innerText ="STOP YAWNING, GET SOME TEA.. ITS JUST EVENING  !!!   ";
+        document.getElementById('messageParaAsPerTime').innerText ="GOOD EVENING    !!  .";
+        document.getElementById('imageTag').style.height ='50%'
+        document.getElementById('imageTag').style.width ='70%'
+    
+    
+        console.log("Yes they  is our evening  time  ")
+        }
+        else if (arrLunchTime[0] && arrWakeTime[0] === (hrs+AMPM)){
+            img = "<img  src=' https://ut-99.github.io/Digital_Clock_JS/assets/Component%2031%20%E2%80%93%201.svg' alt=''>"
+            document.getElementById('imageTag').innerHTML  = img;
+            document.getElementById('grabSomeBreakfastheading').innerText ="LET'S HAVE SOME LUNCH     !!.  ";
+            document.getElementById('messageParaAsPerTime').innerText ="GOOD AFTERNOON !! TAKE SOME SLEEP   !!!!!.  ";
+            document.getElementById('imageTag').style.height ='50%'
+            document.getElementById('imageTag').style.width ='50%'
+          
         
-        console.log("Yes they are equal ")
-    }
-*/
-    // Testing purpose 
-    
-    
-    console.log(hrs);
+            console.log("Yes they  is our lunch time  ")
+        }
+
+   else if (arrWakeTime[0] === (hrs+AMPM)){
+            img = "<img src= 'https://ut-99.github.io/Digital_Clock_JS/assets/Component%2030%20%E2%80%93%201.svg'> "
+            document.getElementById('imageTag').innerHTML  = img  ;
+            document.getElementById('grabSomeBreakfastheading').innerText ="GRAB SOME HEALTHY BREAKFAST    !!!. ";
+            document.getElementById('messageParaAsPerTime').innerText ="GOOD MORNING  !! WAKE UP  !!   .";
+            img.style.height='100%'
+            img.style.width='100%'
+            document.getElementById('imageTag').style.height ='100%'
+    document.getElementById('imageTag').style.width ='100%'
+           
+            console.log("Yes they  is our wake up time  ")
+   
+             
+   }          
+   console.log(hrs);
     console.log(AMPM);
-
-
-
-    
 }
 
 
@@ -265,9 +226,7 @@ function getIamgeChangeForMobile(){
     
     document.getElementById('mins2').innerText = min + '\n'+ ' mins';
     document.getElementById('sec2').innerText = sec + '\n'+' secs';
-    
-  
-
+     
     if ( hrs > 12 ){
         hrs =  hrs - 12  ;
         AMPM = 'PM';
@@ -313,74 +272,57 @@ function getIamgeChangeForMobile(){
 
     if ( (arrWakeTimeMobile[0] === arrLunchTimeMobile[0]  === arrNapTimeMobile[0] ===  arrNightTimeMobile [0]) === (hrs+AMPM) ){
         console.log("Yes all the times are equal so displaying the welcome home image  ");
-        img = "<img  src='assets/welcomeHome.jpg' alt=''></img>"
+        img = "<img  src='welcome.png' alt=''></img>"
     }
-
-   else if (arrWakeTimeMobile[0] === (hrs+AMPM)){
-            img = "<img  src='assets/Component 30 – 1.svg' alt=''>"
-            document.getElementById('imageTag').innerHTML  = img;
-            document.getElementById('grabSomeBreakfastheading').innerText ="GRAB SOME HEALTHY BREAKFAST    !!!. ";
-            document.getElementById('messageParaAsPerTime').innerText ="GOOD MORNING  !! WAKE UP  !!   .";
-          
-            var imagehieght = document.getElementById('imageCurtains').style.height ='70px';
-            document.getElementById('imageCurtains').style.width ='70px';
-
-            console.log("this is image hieght : ", imagehieght);
-           
-            
-            console.log("Yes they  is our wake up time  ")
-
-
-   }
-
-   else if (arrLunchTimeMobile[0] === (hrs+AMPM)){
-        img = "<img  src='./lunch-img.jpg' alt=''>"
-        document.getElementById('imageTag').innerHTML  = img;
-        document.getElementById('grabSomeBreakfastheading').innerText ="LET'S HAVE SOME LUNCH     !!.  ";
-        document.getElementById('messageParaAsPerTime').innerText ="GOOD AFTERNOON !! TAKE SOME SLEEP   !!!!!.  ";
-        document.getElementById('imageTag').style.height ='100%'
-        document.getElementById('imageTag').style.width ='70%'
-   
-    
-        console.log("Yes they  is our lunch time  ")
-   }
-
-
-   else if (arrNapTimeMobile[0] === (hrs+AMPM)){
-    img = "<img  src='./evening-img.jpg' alt=''>"
-    document.getElementById('imageTag').innerHTML  = img;
-    document.getElementById('grabSomeBreakfastheading').innerText ="STOP YAWNING, GET SOME TEA.. ITS JUST EVENING  !!!   ";
-    document.getElementById('messageParaAsPerTime').innerText ="GOOD EVENING    !!  .";
-    document.getElementById('imageTag').style.height ='100%'
-    document.getElementById('imageTag').style.width ='70%'
-
-
-    console.log("Yes they  is our evening  time  ")
-    }
-
-
-    else if (arrNightTimeMobile[0] === (hrs+AMPM))
+    else if (arrNightTimeMobile[0] && arrNapTimeMobile[0] && arrLunchTimeMobile[0] && arrWakeTimeMobile[0]=== (hrs+AMPM))
     {
-        img = "<img  src='./good-night.jpg' alt=''>"
+        img = "<img  src='goodnight.jpg' alt=''>"
         document.getElementById('imageTag').innerHTML  = img;
         document.getElementById('grabSomeBreakfastheading').innerText
          ="CLOSE YOUR EYES AND GO TO SLEEP !!!!!.";
          document.getElementById('messageParaAsPerTime').innerText="GOOD NIGHT   !!  .. ";
     
 
-        document.getElementById('imageCurtains').style.height ='100%'
-        document.getElementById('imageCurtains').style.width ='30%'
+        document.getElementById('imageTag').style.height ='100%'
+        document.getElementById('imageTag').style.width ='30%'
 
 
         console.log("Yes they  is our night time  ")
     }
-
-
+    else if (arrNapTimeMobile[0] && arrLunchTimeMobile[0] && arrWakeTimeMobile[0]=== (hrs+AMPM)){
+        img = "<img  src='naps.jpg' alt=''>"
+        document.getElementById('imageTag').innerHTML  = img;
+        document.getElementById('grabSomeBreakfastheading').innerText ="STOP YAWNING, GET SOME TEA.. ITS JUST EVENING  !!!   ";
+        document.getElementById('messageParaAsPerTime').innerText ="GOOD EVENING    !!  .";
+        document.getElementById('imageTag').style.height ='100%'
+        document.getElementById('imageTag').style.width ='70%'
     
+    
+        console.log("Yes they  is our evening  time  ")
+        }
+        else if (arrLunchTimeMobile[0] && arrWakeTimeMobile[0]=== (hrs+AMPM)){
+            img = "<img  src='https://ut-99.github.io/Digital_Clock_JS/assets/Component%2031%20%E2%80%93%201.svg' alt=''>"
+            document.getElementById('imageTag').innerHTML  = img;
+            document.getElementById('grabSomeBreakfastheading').innerText ="LET'S HAVE SOME LUNCH     !!.  ";
+            document.getElementById('messageParaAsPerTime').innerText ="GOOD AFTERNOON !! TAKE SOME SLEEP   !!!!!.  ";
+            console.log("Yes they  is our lunch time  ")
+       }
+
+   else if (arrWakeTimeMobile[0] === (hrs+AMPM)){
+            img = "<img  src='https://ut-99.github.io/Digital_Clock_JS/assets/Component%2030%20%E2%80%93%201.svg' alt=''>"
+            document.getElementById('imageTag').innerHTML  =img ;
+            document.getElementById('grabSomeBreakfastheading').innerText ="GRAB SOME HEALTHY BREAKFAST    !!!. ";
+            document.getElementById('messageParaAsPerTime').innerText ="GOOD MORNING  !! WAKE UP  !!   .";
+          
+            var imagehieght = document.getElementById('imagetag').style.height ='170px';
+           
+            console.log("this is image hieght : ", imagehieght);
+           
+            
+            console.log("Yes they  is our wake up time  ")
+}
     console.log(hrs);
     console.log(AMPM);
-
-
-
-    
+    console.log(hello)
 }
+    
